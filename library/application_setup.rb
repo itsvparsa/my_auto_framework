@@ -11,5 +11,9 @@ module Library
     def drop_down
       @pages[:drop_down] ||= Pages::DropDownPage.new
     end
+
+    def multiple_window
+      @pages[:multiple_window] ||= Pages::MultipleWindowPage.new
+    end
   end
 end

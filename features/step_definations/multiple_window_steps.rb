@@ -12,9 +12,19 @@ end
 
 # Then steps
 Then(/^I should be on new window$/) do
-  desktop.expect(page).to have_content("New Window")
+  new_window = window_opened_by do
+  click_link "Click Here"
+  end
+  within_window new_window do
+  expect(page).to have_content("New Window")
+  end
 end
 
 And(/^I should see new window url$/) do
-  desktop.expect(page.current_url).to end_with("/new")
+  new_window = window_opened_by do
+  click_link "Click Here"
+  end
+  within_window new_window do
+  expect(page.current_url).to end_with("/new")
+  end
 end

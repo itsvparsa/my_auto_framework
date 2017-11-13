@@ -5,6 +5,7 @@ gem "capybara"
 gem "selenium-webdriver"
 gem 'chromedriver-helper'
 gem "poltergeist"
+gem "rspec"
 
 # development stuff
 gem "cucumber"

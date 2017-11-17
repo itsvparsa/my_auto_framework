@@ -1,20 +1,20 @@
 Given("I am navigated to page") do
   visit("https://the-internet.herokuapp.com")
-  #execute_script("window.scrollBy(0,#{pixels})")
-  #click_on("JavaScript Alerts")
-  find_link('JavaScript Alerts', :visible => true).click
+  sleep 1
+  execute_script("window.scrollBy(0,10000)")
+  click_on("JavaScript Alerts")
 end
 
 When("I click on click for JS alerts") do
-  click_link("Click for JS Alert")
+  sleep 1
+  click_on("Click for JS Alert")
 end
 
 Then("I click ok on alert") do
-  accept_alert do
-  click_link('Click for JS Alert')
- end
+  accept_alert("I am a JS Alert")
 end
 
 Then("I see result on the page") do
+  sleep 1
   expect(page).to have_content("You successfuly clicked an alert")
 end

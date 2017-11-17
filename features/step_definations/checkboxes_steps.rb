@@ -7,15 +7,18 @@ end
 
 # Then steps
 Then(/^I check first checkbox$/) do
-  check("checkbox 1")
+  sleep 1
+  desktop.checkboxes.first_box.click
 end
 
-Then(/^I check second checkbox$/) do
-  check("checkbox 2")
+Then(/^I uncheck second checkbox$/) do
+  sleep 1
+  desktop.checkboxes.second_box.click
 end
 
 Then(/^I uncheck first box$/) do
-  uncheck("checkbox 1")
+  sleep 1
+  desktop.checkboxes.first_box.click
 end
 
 

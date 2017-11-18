@@ -20,6 +20,3 @@ Then(/^I uncheck first box$/) do
   sleep 1
   desktop.checkboxes.first_box.click
 end
-
-
-

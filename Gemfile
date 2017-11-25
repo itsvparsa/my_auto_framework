@@ -3,7 +3,7 @@ source "https://rubygems.org"
 # capybara and other browser driver stuff
 gem "capybara"
 gem "selenium-webdriver"
-gem 'chromedriver-helper'
+# gem 'chromedriver-helper'
 gem "poltergeist"
 gem "rspec"
 

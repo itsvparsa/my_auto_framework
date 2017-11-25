@@ -1,12 +1,12 @@
 Dir[File.dirname(__FILE__) + "/../../library/*.rb"].each { |file| require file }
 
 Capybara.configure do |config|
-  config.default_driver = :chrome
+  config.default_driver = :firefox
 end
 
-Capybara.register_driver(:chrome) do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
-end
+# Capybara.register_driver(:chrome) do |app|
+#   Capybara::Selenium::Driver.new(app, :browser => :chrome)
+# end
 
 def desktop(options = {})
   return $desktop if $desktop
@@ -23,6 +23,6 @@ end
 #   config.ignore_hidden_elements = false
 # end
 
-# Capybara.register_driver :firefox do |app|
-#   Capybara::Selenium::Driver.new(app, :browser => :firefox)
-# end
+Capybara.register_driver :firefox do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :firefox)
+end

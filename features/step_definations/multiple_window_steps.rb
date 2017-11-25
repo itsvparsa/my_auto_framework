@@ -21,10 +21,12 @@ Then(/^I should be on new window$/) do
 end
 
 And(/^I should see new window url$/) do
+  sleep 1
   new_window = window_opened_by do
   click_link "Click Here"
   end
   within_window new_window do
+  sleep 1
   expect(page.current_url).to end_with("/new")
   end
 end
